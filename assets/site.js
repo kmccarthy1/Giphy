@@ -1,8 +1,4 @@
-$(function() {
-    // console.log("page loaded");
-})
 
-// Initial array
 var foodArray = ["Lasagna", "Linguini", "Carbonara", "Meatballs", "Bratwurst", "Sauerkraut", "Potatoes", "Dumplings", "Stir-Fry", "Waffles", "Quesadillas", "Cinnamon Rolls", "Muffins"];
 
 // Function for displaying initial data
@@ -13,18 +9,13 @@ function renderButtons() {
 
     // Looping through array
     for (var i = 0; i < foodArray.length; i++) {
-        // Then dynamicaly generating buttons for each hero in the array
-        // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+      
         var b = $("<button class='btn btn-info'>");
-        // Adding a class of hero-btn to our button
+     
         b.addClass("food-btn");
-        // Adding a data-attribute
         b.attr("data-name", foodArray[i]);
-        // Providing the initial button text
         b.text(foodArray[i]);
-        // console.log(b);
-
-        // Adding the button to the buttons-view div
+        
         $("#buttons-view").append(b);
     }
 };    
