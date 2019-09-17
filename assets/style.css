@@ -1,0 +1,58 @@
+.container-fluid {
+    margin: 0 !important;
+    width: 90%;
+}
+
+#buttons-view {
+    width: 75%;
+   
+}
+
+button,
+    div,
+    form,
+    input {
+        margin: 5px;
+    } 
+
+#heroes-input {
+    width: 100%;
+    padding: 4px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#textOnly {
+    color: #0BA3D3;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 5px;
+}
+
+body {
+    font-size: 14px;
+}
+
+.hero-btn,
+#add-hero {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.superH {
+    float: left;
+    margin: 15px;
+}
+#heroes-view{
+    width: 80%;
+    float:left;
+}
+
+form {
+    float: right;
+    /* position: relative; */
+}
+
+.form-group {
+    width: 100%;
+}
