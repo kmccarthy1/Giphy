@@ -50,7 +50,7 @@ function displayRatingInfo() {
 
             for(var i=0; i < results.length; i++) {
             // Creating a div to hold the heroes-form
-                var foodDiv = $("<div class='superH'>"); 
+                var foodDiv = $("<div class='foodH'>"); 
                 var rating = results[i].rating;
                 // console.log(rating);
                 var p = $("<p>").text("Rating: " + rating);
