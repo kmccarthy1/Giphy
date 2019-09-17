@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GifTastic</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/site.js\">
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div class="row" id="center-buttons">
+            <div class="col">
+                <div id="buttons-view"></div>
+            </div>
+        </div>
+
+        <!-- Gifs will Get Dumped Here -->
+    <div class="row">
+            <div class="col">    
+                <div id="heroes-view"></div>
+            </div>
+    
+    <!-- Form that holds new superhero searches & text -->
+        <div class="form-group">
+            <form id="heroes-form"><br>
+                <label for="heroes-input" id="textOnly">Add Your Favorite Super Hero</label><br>
+                <input type="text" id="heroes-input" placeholder="add a superhero" autocomplete="off"><br>
+
+                <!-- Button triggers new hero to be added -->
+                <input id="add-hero" type="submit" class="btn btn-info mb-2" data-toggle="buttons" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/gifTastic.js"></script>
+
+</body>
+</html>
