@@ -2,27 +2,26 @@ $(function() {
     // console.log("page loaded");
 })
 
-// Initial array of super heroes
-var superHeroes = ["Wonder Woman", "Hulk", "Captain America", "Superman", "Thor", "Iron Man", "Spider-Man", "Guardians of the Galaxy", "Deadpool", "Batman", "X-Men", "Ant-Man", "Black Panther"];
+// Initial array
+var foodArray = ["", "Hulk", "Captain America", "Superman", "Thor", "Iron Man", "Spider-Man", "Guardians of the Galaxy", "Deadpool", "Batman", "X-Men", "Ant-Man", "Black Panther"];
 
-// Function for displaying data
+// Function for displaying initial data
 function renderButtons() {
 
-    // Deleting the hero buttons prior to ADDING NEW MOVIE BUTTONS
     // (this is necessary otherwise will have repeat buttons)
     $("#buttons-view").empty();
 
-    // Looping through the array of superHeroes
-    for (var i = 0; i < superHeroes.length; i++) {
+    // Looping through array
+    for (var i = 0; i < foodArray.length; i++) {
         // Then dynamicaly generating buttons for each hero in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         var b = $("<button class='btn btn-info'>");
         // Adding a class of hero-btn to our button
-        b.addClass("hero-btn");
+        b.addClass("food-btn");
         // Adding a data-attribute
-        b.attr("data-name", superHeroes[i]);
+        b.attr("data-name", foodArray[i]);
         // Providing the initial button text
-        b.text(superHeroes[i]);
+        b.text(foodArray[i]);
         // console.log(b);
 
         // Adding the button to the buttons-view div
@@ -34,9 +33,10 @@ function renderButtons() {
 function displayRatingInfo() {
 
     var h = $(this).attr('data-name');
+    let giphykey = "GI1pI1MGLn9asxU97K9yx3v7WJDl107W";
     // console.log(this);
     
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + h + "&api_key=S0s43WOAT4jzNdL4GICYdNrVfDl0MWMH&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + h + "&api_key=" + giphykey + "&limit=10";
     // console.log(queryURL);
     // Creating an AJAX call for the specific hero button being clicked
     $.ajax({
@@ -46,29 +46,29 @@ function displayRatingInfo() {
         var results = response.data;
         // console.log(results);
 
-        $('#heroes-view').empty();
+        $('#food-view').empty();
 
             for(var i=0; i < results.length; i++) {
             // Creating a div to hold the heroes-form
-                var heroesDiv = $("<div class='superH'>"); 
+                var foodDiv = $("<div class='superH'>"); 
                 var rating = results[i].rating;
                 // console.log(rating);
                 var p = $("<p>").text("Rating: " + rating);
-                var heroImage = $("<img>");
+                var foodImage = $("<img>");
 
-                heroImage.attr("src", results[i].images.fixed_height_still.url);
-                heroImage.attr("data-still", results[i].images.fixed_height_still.url);
-                heroImage.attr("data-animate", results[i].images.fixed_height.url);
-                heroImage.attr("data-state", "still")
-                heroImage.attr("class", "pause")
+                foodImage.attr("src", results[i].images.fixed_height_still.url);
+                foodImage.attr("data-still", results[i].images.fixed_height_still.url);
+                foodImage.attr("data-animate", results[i].images.fixed_height.url);
+                foodImage.attr("data-state", "still")
+                foodImage.attr("class", "pause")
 
-                heroesDiv.prepend(p);
-                heroesDiv.prepend(heroImage);
+                foodDiv.prepend(p);
+                foodDiv.prepend(foodImage);
 
-                $('#heroes-view').prepend(heroesDiv);
+                $('#food-view').prepend(foodDiv);
 
-                // $('#heroes-view').prepend("<p>Rating: " + response.data[i].rating + "</p>");
-                // $('#heroes-view').prepend("<img src='" + response.data[i].images.fixed_width_still.url + "'>");
+                // $('#food-view').prepend("<p>Rating: " + response.data[i].rating + "</p>");
+                // $('#food-view').prepend("<img src='" + response.data[i].images.fixed_width_still.url + "'>");
             }
         });
 };
@@ -76,7 +76,7 @@ function displayRatingInfo() {
 // $('#buttons-view').on('click', '.gif', displayRatingInfo) 
 
 // This function handles events when the submit button is clicked
-$('#add-hero').on('click', function(event) {
+$('#add-food').on('click', function(event) {
     // alert("Button Clicked!");
 
     // event.preventDefault() prevents the form from trying to submit itself.
@@ -84,11 +84,11 @@ $('#add-hero').on('click', function(event) {
     event.preventDefault();
 
     // This line will grab the text from the input box
-    var hero = $("#heroes-input").val().trim();
+    var food = $("#food-input").val().trim();
     // console.log(hero);
 
     // The superhero entered from the textbox is then added to our array
-    superHeroes.push(hero);
+    foodArray.push(food);
 
     // Putting the entire form above the previous gifs
     // $("#heroes-form").prepend(heroesDiv);
@@ -97,7 +97,7 @@ $('#add-hero').on('click', function(event) {
     renderButtons();
 });
 
-$('#heroes-view').on('click', '.pause', function() {
+$('#food-view').on('click', '.pause', function() {
     // alert("button clicked!")
    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
    var state = $(this).attr("data-state");
@@ -118,8 +118,8 @@ $('#heroes-view').on('click', '.pause', function() {
 // $(document).on('click', '#add-hero');
 
 // Added a click event listener to all elements with a class of "hero-btn"
-$(document).on('click', '.hero-btn', displayRatingInfo);
-// $(document).on('click', '', function() {} );
+$(document).on('click', '.food-btn', displayRatingInfo);
+
 
 // calling the renderButtons function
 renderButtons();
