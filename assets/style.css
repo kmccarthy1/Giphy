@@ -2,6 +2,10 @@
     margin: 0 !important;
     width: 90%;
 }
+.btn {
+color: lightgreen;
+background-color: black;
+}
 
 #buttons-view {
     width: 75%;
@@ -15,7 +19,7 @@ button,
         margin: 5px;
     } 
 
-#heroes-input {
+#food-input {
     width: 100%;
     padding: 4px;
     font-size: 16px;
@@ -23,34 +27,33 @@ button,
 }
 
 #textOnly {
-    color: #0BA3D3;
+    color: rgb(225, 228, 42);
     font-size: 22px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 5px;
 }
 
 body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-content: center;
     font-size: 14px;
 }
 
-.hero-btn,
-#add-hero {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.food-btn,
+#add-food {
     font-size: 20px;
 }
 
-.superH {
+.foodH {
     float: left;
     margin: 15px;
 }
-#heroes-view{
+#food-view{
     width: 80%;
     float:left;
 }
 
 form {
     float: right;
-    /* position: relative; */
 }
 
 .form-group {
