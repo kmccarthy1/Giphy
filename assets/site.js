@@ -3,7 +3,7 @@ $(function() {
 })
 
 // Initial array
-var foodArray = ["", "Hulk", "Captain America", "Superman", "Thor", "Iron Man", "Spider-Man", "Guardians of the Galaxy", "Deadpool", "Batman", "X-Men", "Ant-Man", "Black Panther"];
+var foodArray = ["Lasagna", "Linguini", "Carbonara", "Meatballs", "Bratwurst", "Sauerkraut", "Potatoes", "Dumplings", "Stir-Fry", "Waffles", "Quesadillas", "Cinnamon Rolls", "Muffins"];
 
 // Function for displaying initial data
 function renderButtons() {
