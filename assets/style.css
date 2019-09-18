@@ -3,8 +3,8 @@
     width: 90%;
 }
 .btn {
-color: lightgreen;
-background-color: black;
+color: black;
+background-color: #cccccc;
 }
 
 #buttons-view {
@@ -27,12 +27,15 @@ button,
 }
 
 #textOnly {
-    color: rgb(225, 228, 42);
+    color: rgb(32, 151, 184);
+    background: #cccccc;
     font-size: 22px;
     margin-left: 5px;
 }
 
 body {
+    background-image: url("../assets/dinner.jpg");
+    background-size: cover;
     font-family: Georgia, 'Times New Roman', Times, serif;
     align-content: center;
     font-size: 14px;
